@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Angular Arrangeable Array</title>
+
+    <link href='build/build.css' type='text/css' rel='stylesheet'></link>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js'></script>
+    <script src='build/build.js'></script>
+
+    <script>
+
+      var app = window.angular.module('my-app', [ require('angular-droparea') ]);
+
+      app.controller('Ctrl', function ($scope) {
+        $scope.items = [];
+
+        $scope.$watch('items', function () {
+          console.log($scope.items);
+        }, true);
+      });
+
+    </script>
+
+  </head>
+
+  <body ng-app='my-app' ng-controller='Ctrl'>
+    <h1>Droparea: Drag files on to this window.</h1>
+    <droparea files='items'></droparea>
+    <droparea files='items'></droparea>
+  </body>
+
+</html>
